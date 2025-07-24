@@ -1,35 +1,45 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 int main()
 {
     std::string ansver;
-    std::string word1;
-    std::string word2;
-    std::string word3;
+    std::vector<std::string>word;
+    int a = 0;
 
     std::getline(std::cin, ansver);
     std::cout << ansver.length() << '\n';
 
     for (int i = 0; i < ansver.length(); i++) {
-
         if (ansver[i] == ' ') {
-            break;
+            a = a+1;
+            continue;
         }
         else {
-            word1 += ansver[i];
+            if (a >= word.size()) word.push_back("");
+           
+
+            word[a].push_back({ansver[i]});
+            
+            
         }
-        std::cout << word1 << '\n';
+        
 
     }
-    for (int i = word1.length() + 1; i < ansver.length(); i++) {
-
-        if (ansver[i] == ' ') {
-            break;
-        }
-        else {
-            word2 += ansver[i];
-        }
-        std::cout << word2 << '\n';
+    for (int i = 0; i < word.size(); i++)
+    {
+        std::cout << word[i] << '\n';
     }
+
+    //for (int i = word1.length() + 1; i < ansver.length(); i++) {
+
+    //    if (ansver[i] == ' ') {
+    //        break;
+    //    }
+    //    else {
+    //        word2 += ansver[i];
+    //    }
+    //    std::cout << word2 << '\n';
+    //}
 }
