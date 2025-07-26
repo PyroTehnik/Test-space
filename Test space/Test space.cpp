@@ -1,43 +1,41 @@
 #include <iostream>
-#include <string>
 #include <vector>
-using namespace std;
+#include <algorithm>
+#include <cctype>
+#include <locale.h>
+#include <string>
+using  namespace std;
 
 int main()
 {
     string ansver;
     vector<string>word;
-    int a = 0;
+    int counterW = 0;
 
     getline(cin, ansver);
-    cout << ansver.length() << '\n';
+    cout << "ansver.length: " << ansver.length() << '\n';
+
 
     for (int i = 0; i < ansver.length(); i++) {
-        if (ansver[i] == ' ') {
-            a = a + 1;
-            continue;
-        }
-        else {
-            if (a >= word.size()) word.push_back("");
-            word[a].push_back({ ansver[i] });
+
+        cout << "i " << i << '\n';
+        cout << "counterW " << counterW << '\n';
+        cout << "word.size " << word.size() << '\n';
+
+        if (ansver[i] != ' ')
+        {
+            for (; isalnum(ansver[i]); i++)
+            {
+                if (counterW >= word.size())
+                    word.push_back("");
+                word[counterW].push_back({ ansver[i] });
+            }
+            counterW++;
         }
     }
+
     for (int i = 0; i < word.size(); i++)
     {
-        cout << word[i] << '\n';
+        cout << "Word " << i << ": " << word[i] << '\n';
     }
-
-    string ItemTake = (word[1]);
-    cout << ItemTake;
-
-    //for (int i = word1.length() + 1; i < ansver.length(); i++) {
-
-    //    if (ansver[i] == ' ') {
-    //        break;
-    //    }
-    //    else {
-    //        word2 += ansver[i];
-    //    }
-    //    std::cout << word2 << '\n';
-    //}
 }
