@@ -38,4 +38,9 @@ int main()
     {
         cout << "Word " << i << ": " << word[i] << '\n';
     }
+
+    
+    auto arg = (word.begin()+1, word.back());
+    cout << "command " << word[0] << '\n';
+    cout << "argument " << arg << '\n';
 }
