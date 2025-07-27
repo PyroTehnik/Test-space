@@ -44,6 +44,7 @@ int main()
     cout << "command " << word[0] << '\n';
     cout << "argument" << " ";
 
+
     for (int i = 1;i < word.size();i++) 
     {
         arg.push_back({ word[i] });
