@@ -10,6 +10,7 @@ int main()
 {
     string ansver;
     vector<string>word;
+    vector<string>arg;
     int counterW = 0;
 
     getline(cin, ansver);
@@ -39,8 +40,13 @@ int main()
         cout << "Word " << i << ": " << word[i] << '\n';
     }
 
-    
-    auto arg = (word.begin()+1, word.back());
+    //auto arg = (word.begin()+1, word.back());
     cout << "command " << word[0] << '\n';
-    cout << "argument " << arg << '\n';
+    cout << "argument" << " ";
+
+    for (int i = 1;i < word.size();i++) 
+    {
+        arg.push_back({ word[i] });
+        cout << arg[i - 1] << " ";
+    }
 }
