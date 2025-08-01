@@ -10,7 +10,6 @@ int main()
 {
     string ansver;
     vector<string>word;
-    string comm;
     vector<string>argV;
     string arg;
     int counterW = 0;
@@ -37,15 +36,15 @@ int main()
         }
     }
 
+    for (int i = 1; i < word.size(); i++)
+    {
+        arg += word[i] + " ";
+    }
+
     // отладка
     for (int i = 0; i < word.size(); i++)
     {
         cout << "Word " << i << ": " << word[i] << '\n';
-    }
-
-    for (int i = 1; i < word.size(); i++)
-    {
-        arg += word[i] + " ";
     }
 
     cout << "command " << word[0] << '\n';
