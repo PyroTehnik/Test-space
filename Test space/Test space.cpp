@@ -20,6 +20,7 @@ int main()
 
     for (int i = 0; i < ansver.length(); i++) {
 
+        // отладка
         cout << "i " << i << '\n';
         cout << "counterW " << counterW << '\n';
         cout << "word.size " << word.size() << '\n';
@@ -46,7 +47,6 @@ int main()
     {
         cout << "Word " << i << ": " << word[i] << '\n';
     }
-
     cout << "command " << word[0] << '\n';
     cout << "argument " << arg;;
 }
